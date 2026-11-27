@@ -1,0 +1,68 @@
+name: iOS Build (unsigned)
+
+# Builds the iOS app on GitHub Actions macOS runners, so no Mac is needed.
+# Output: an artifact with an unsigned IPA, installable via Sideloadly/AltStore
+# (or re-sign it later for TestFlight; see the signing note at the bottom).
+# macOS runners use free minutes at 10x the Linux rate, so we only build on
+# demand: manually from the Actions tab, or on a version tag push (v1.0.0...).
+on:
+  workflow_dispatch:
+  push:
+    tags: ['v*']
+
+jobs:
+  build-ios:
+    # macos-15 ships Xcode 16 (iOS 18 SDK), which defines isiOSAppOnVision
+    # needed by device_info_plus; macos-14 (Xcode 15) fails to compile it.
+    runs-on: macos-15
+    timeout-minutes: 40
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Select latest stable Xcode
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: latest-stable
+
+      - name: Setup Flutter 3.44.4
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.44.4'
+          channel: stable
+          cache: true
+
+      - name: Flutter pub get
+        run: flutter pub get
+
+      - name: Generate localizations
+        run: flutter gen-l10n
+
+      # Demo-mode build only (sample data, no server). No secrets are used here:
+      # anything baked into a public CI artifact can be extracted by anyone.
+      # Build a real app locally with --dart-define (see README).
+      - name: Build iOS (release, no codesign, demo mode)
+        run: flutter build ios --release --no-codesign
+
+      - name: Package unsigned IPA
+        run: |
+          cd build/ios/iphoneos
+          mkdir -p Payload
+          cp -R Runner.app Payload/
+          zip -qq -r StreamVault-unsigned.ipa Payload
+          ls -lh StreamVault-unsigned.ipa
+
+      - name: Upload IPA artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: StreamVault-ios-unsigned
+          path: build/ios/iphoneos/StreamVault-unsigned.ipa
+          if-no-files-found: error
+          retention-days: 14
+
+# -- Code signing (later, once an Apple Developer account is available) --
+# For a signed build (TestFlight/App Store or Ad-hoc), add:
+#   - a distribution certificate (.p12) and provisioning profile as base64 secrets
+#   - a step that imports the certificate into a temporary keychain
+#   - flutter build ipa --export-options-plist=... (instead of --no-codesign)

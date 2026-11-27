@@ -1,0 +1,93 @@
+name: mrk0slive
+description: "StreamVault-IPTV: Flutter IPTV client for iOS and Android."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.12.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+
+  # State management / dependency injection
+  flutter_riverpod: ^2.6.1
+
+  # Networking + interceptors (HMAC / User-Agent)
+  dio: ^5.7.0
+  crypto: ^3.0.6            # HMAC-SHA256 / sha256
+
+  # Secure storage (Keychain on iOS)
+  flutter_secure_storage: ^9.2.4
+
+  # Poster / logo images
+  cached_network_image: ^3.4.1
+
+  # Player (libmpv): plays .ts for live and .mp4 for VOD
+  # media_kit_libs_video bundles native libs for all platforms (iOS for release + Linux/desktop for local dev).
+  media_kit: ^1.2.6
+  media_kit_video: ^2.0.1
+  media_kit_libs_video: ^1.0.7
+  flutter_localizations:
+    sdk: flutter
+  uuid: ^4.5.3
+  path_provider: ^2.1.6
+  livekit_client: ^2.8.1
+  permission_handler: ^12.0.3
+  url_launcher: ^6.3.2
+  package_info_plus: ^9.0.1
+
+  # Note: to be added in later stages (need platform setup / secrets):
+  #   livekit_client                                → voice rooms
+  #   firebase_core/analytics/messaging/crashlytics → Firebase
+  #   drift + sqlite3_flutter_libs                  → local catalog
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_launcher_icons: ^0.14.4
+  # For testing the disk cache with a temp path (no device)
+  path_provider_platform_interface: ^2.1.2
+  plugin_platform_interface: ^2.1.8
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+
+  # Generates AppText from lib/l10n/*.arb (settings in l10n.yaml)
+  generate: true
+
+  # Voice room avatars, **copied as-is from the Android app**.
+  # ⚠️ Order/name is the wire contract: the avatar number in metadata is the
+  # index into this list. Only append at the end; never reorder, rename or
+  # delete, or every member's picture silently changes for other clients.
+  assets:
+    - assets/avatars/
+
+  # Thmanyah Sans: the app's main font, all weights
+  fonts:
+    - family: Thmanyah
+      fonts:
+        - asset: assets/fonts/ThmanyahSans-Light.otf
+          weight: 300
+        - asset: assets/fonts/ThmanyahSans-Regular.otf
+          weight: 400
+        - asset: assets/fonts/ThmanyahSans-Medium.otf
+          weight: 500
+        - asset: assets/fonts/ThmanyahSans-Bold.otf
+          weight: 700
+        - asset: assets/fonts/ThmanyahSans-Black.otf
+          weight: 900
+
+# App icon, generated for all platforms from a single image.
+flutter_launcher_icons:
+  image_path: "assets/branding/app_icon.png"
+  android: "ic_launcher"
+  ios: true
+  remove_alpha_ios: true
+  min_sdk_android: 21
+  adaptive_icon_background: "#181234"
+  adaptive_icon_foreground: "assets/branding/app_icon.png"

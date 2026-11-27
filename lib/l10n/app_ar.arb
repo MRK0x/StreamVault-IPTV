@@ -1,0 +1,287 @@
+{
+  "@@locale": "ar",
+
+  "commonCancel": "إلغاء",
+  "commonRetry": "إعادة المحاولة",
+  "commonClose": "إغلاق",
+  "commonLoading": "جارٍ التحميل…",
+  "commonNone": "—",
+
+  "navHome": "الرئيسية",
+  "navLive": "البث المباشر",
+  "navMovies": "الأفلام",
+  "navSeries": "المسلسلات",
+  "navAccount": "حسابي",
+
+  "kindLive": "مباشر",
+  "kindMovie": "فيلم",
+  "kindSeries": "مسلسل",
+
+  "settingsSubscription": "الاشتراك",
+  "settingsContent": "المحتوى",
+  "settingsGeneral": "عام",
+  "settingsAbout": "عن التطبيق",
+  "settingsLanguage": "اللغة",
+  "settingsVersion": "الإصدار",
+  "settingsTelegramChannel": "قناتنا على تلغرام",
+  "settingsTelegramAdmin": "تواصل مع الأدمن",
+  "settingsLogout": "تسجيل الخروج",
+  "settingsLinkFailed": "تعذّر فتح الرابط",
+  "settingsFetchFailedTapRetry": "تعذّر الجلب — اضغط لإعادة المحاولة",
+  "settingsConnectedTo": "متصل بـ {url}",
+  "@settingsConnectedTo": {
+    "placeholders": { "url": { "type": "String" } }
+  },
+  "settingsDemoMode": "وضع العرض (بيانات تجريبية) • الباك-إند غير مربوط",
+
+  "planExpiredOn": "انتهى في {date}",
+  "@planExpiredOn": {
+    "placeholders": { "date": { "type": "String" } }
+  },
+  "planRemaining": "يتبقّى {days} • ينتهي {date}",
+  "@planRemaining": {
+    "placeholders": {
+      "days": { "type": "String" },
+      "date": { "type": "String" }
+    }
+  },
+  "planDays": "{count, plural, =1{يوم واحد} =2{يومان} few{{count} أيام} other{{count} يوماً}}",
+  "@planDays": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+  "subscriptionActive": "اشتراك فعّال",
+  "subscriptionExpired": "اشتراك منتهٍ",
+
+  "syncAll": "مزامنة الكل",
+  "syncing": "جارٍ المزامنة…",
+  "syncingSubtitle": "يُعاد تحميل القنوات والأفلام والمسلسلات",
+  "syncLastAt": "آخر مزامنة: {when}",
+  "@syncLastAt": {
+    "placeholders": { "when": { "type": "String" } }
+  },
+  "syncDone": "تمت مزامنة الكتالوج بالكامل ✅",
+  "syncFailed": "تعذّرت المزامنة: {error}",
+  "@syncFailed": {
+    "placeholders": { "error": { "type": "String" } }
+  },
+  "syncNever": "لم تتم بعد",
+
+  "agoNow": "الآن",
+  "agoMinutes": "قبل {count} دقيقة",
+  "@agoMinutes": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+  "agoHours": "قبل {count} ساعة",
+  "@agoHours": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+  "agoDays": "قبل {count} يوم",
+  "@agoDays": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+
+  "devicesTitle": "الأجهزة المرتبطة",
+  "devicesThisDevice": "هذا جهازك",
+  "devicesEvict": "إخراج",
+  "devicesEvictTitle": "إخراج الجهاز",
+  "devicesEvictBody": "سيُخرج «{name}» ويُسجَّل خروجه فوراً، ويتحرّر مقعده لجهاز آخر.",
+  "@devicesEvictBody": {
+    "placeholders": { "name": { "type": "String" } }
+  },
+  "devicesEvicted": "أُخرج «{name}» وتحرّر مقعده",
+  "@devicesEvicted": {
+    "placeholders": { "name": { "type": "String" } }
+  },
+  "devicesEvictFailed": "تعذّر إخراج الجهاز",
+  "devicesNotFound": "الجهاز غير موجود",
+  "devicesFetchFailed": "تعذّر جلب الأجهزة",
+  "devicesOverLimit": "تجاوزت حدّ خطتك — أخرج الأجهزة الزائدة",
+  "devicesOverLimitLong": "لديك {count} أجهزة وخطتك تسمح بـ{max} فقط — أخرج الزائد",
+  "@devicesOverLimitLong": {
+    "placeholders": {
+      "count": { "type": "int" },
+      "max": { "type": "int" }
+    }
+  },
+  "devicesCountOfMax": "{count} من {max} جهاز",
+  "@devicesCountOfMax": {
+    "placeholders": {
+      "count": { "type": "int" },
+      "max": { "type": "int" }
+    }
+  },
+  "devicesRegistered": "{count} جهاز مسجّل",
+  "@devicesRegistered": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+  "devicesLastSeen": "آخر نشاط: {when}",
+  "@devicesLastSeen": {
+    "placeholders": { "when": { "type": "String" } }
+  },
+  "deviceFallbackName": "جهاز",
+
+  "userFallback": "مستخدم",
+
+  "authTagline": "بثّ مباشر • أفلام • مسلسلات",
+  "authUsername": "اسم المستخدم",
+  "authPassword": "كلمة المرور",
+  "authLogin": "تسجيل الدخول",
+  "authDemoHint": "وضع العرض: أدخل أي بيانات للمتابعة",
+  "authDeviceLimitTitle": "أجهزتك المرتبطة — أخرج واحداً للمتابعة",
+  "authEvict": "أخرج",
+  "activateTitle": "فعّل حسابك",
+  "activateSubtitle": "أدخل كود التفعيل لتشغيل اشتراكك",
+  "activateCodeHint": "كود التفعيل",
+  "activateSubmit": "تفعيل",
+  "activateLater": "لديّ كود لاحقاً",
+  "activateSuccess": "تم التفعيل — اشتراكك فعّال الآن ✅",
+  "activateErrInvalid": "الكود غير صحيح أو مستخدَم من قبل",
+  "activateErrThrottled": "محاولات كثيرة — حاول بعد قليل",
+  "activateErrGeneric": "تعذّر التفعيل — حاول مجدداً",
+  "activateEmpty": "أدخل الكود",
+  "activateFromSettings": "تفعيل بكود",
+  "subscriptionNone": "بلا اشتراك — فعّل بكود",
+
+  "authCreateAccount": "إنشاء حساب",
+  "authNoAccount": "ليس لديك حساب؟",
+  "authRegisterTitle": "حساب جديد",
+  "authRegisterSubtitle": "أنشئ حسابك وابدأ المشاهدة",
+  "authEmail": "البريد الإلكتروني",
+  "authConfirmPassword": "تأكيد كلمة المرور",
+  "authRegisterSubmit": "إنشاء الحساب",
+  "authHaveAccount": "لديك حساب بالفعل؟",
+  "authLoginInstead": "سجّل الدخول",
+
+  "authValEmailRequired": "أدخل بريدك الإلكتروني",
+  "authValEmailInvalid": "بريد إلكتروني غير صالح",
+  "authValUsernameRequired": "أدخل اسم المستخدم",
+  "authValUsernameShort": "اسم المستخدم قصير جداً",
+  "authValPasswordRequired": "أدخل كلمة المرور",
+  "authValPasswordShort": "كلمة المرور 8 أحرف على الأقل",
+  "authValPasswordMismatch": "كلمتا المرور غير متطابقتين",
+
+  "authErrUsernameTaken": "اسم المستخدم محجوز — اختر غيره",
+  "authErrEmailTaken": "هذا البريد مسجّل مسبقاً",
+  "authErrPasswordCommon": "كلمة المرور شائعة جداً — اختر أقوى منها",
+  "authErrPasswordNumeric": "كلمة المرور أرقام فقط — أضف أحرفاً",
+  "authErrPasswordSimilar": "كلمة المرور تشبه اسمك أو بريدك",
+  "authErrUsernameGeneric": "اسم مستخدم غير مقبول",
+  "authErrEmailGeneric": "بريد إلكتروني غير مقبول",
+  "authErrPasswordGeneric": "كلمة مرور غير مقبولة",
+  "authErrorThrottled": "محاولات كثيرة — حاول بعد قليل",
+  "authErrorRegisterFailed": "تعذّر إنشاء الحساب — حاول مجدداً",
+
+  "authErrorEmptyCredentials": "أدخل اسم المستخدم وكلمة المرور",
+  "authErrorBadCredentials": "اسم المستخدم أو كلمة المرور غير صحيحة",
+  "authErrorNetwork": "تعذّر الاتصال بالخادم",
+  "authErrorDeviceLimit": "بلغت الحدّ الأقصى للأجهزة — أخرج جهازاً للمتابعة",
+  "authErrorGeneric": "تعذّر تسجيل الدخول",
+
+  "homeLiveChannels": "قنوات مباشرة",
+  "homeTrendingMovies": "أفلام رائجة",
+  "homeSelectedSeries": "مسلسلات مختارة",
+  "homePlay": "تشغيل",
+  "homeDetails": "التفاصيل",
+
+  "searchScopeLive": "القنوات",
+  "searchHint": "ابحث في {scope}",
+  "@searchHint": {
+    "placeholders": { "scope": { "type": "String" } }
+  },
+  "searchNoResults": "لا نتائج لـ «{query}» في {scope}",
+  "@searchNoResults": {
+    "placeholders": {
+      "query": { "type": "String" },
+      "scope": { "type": "String" }
+    }
+  },
+  "searchResults": "{count, plural, =1{نتيجة واحدة} =2{نتيجتان} few{{count} نتائج} many{{count} نتيجة} other{{count} نتيجة}} في {scope}",
+  "@searchResults": {
+    "placeholders": {
+      "count": { "type": "int" },
+      "scope": { "type": "String" }
+    }
+  },
+
+  "browseSeeMore": "عرض المزيد",
+  "browseSeeAll": "عرض الكل",
+  "browseLoadFailed": "تعذّر تحميل المحتوى — تحقّق من اتصالك",
+  "browseNoContent": "لا يوجد محتوى",
+  "browseOther": "أخرى",
+  "browseAllChannels": "كل القنوات",
+  "browseSearchCategories": "ابحث في الفئات…",
+  "browseSearchChannels": "ابحث في القنوات…",
+
+  "detailSeason": "الموسم {number}",
+  "@detailSeason": {
+    "placeholders": { "number": { "type": "int" } }
+  },
+  "detailLoadingEpisodes": "جارٍ تحميل الحلقات…",
+  "detailWatchNow": "شاهد الآن",
+  "detailPlayFirstEpisode": "تشغيل الحلقة الأولى",
+  "detailPlay": "تشغيل",
+  "detailFavorites": "المفضّلة",
+  "detailWatchParty": "مشاهدة جماعية",
+  "detailNowShowing": "يُعرض الآن",
+  "detailStory": "القصّة",
+  "detailEpisodesError": "تعذّر جلب الحلقات",
+  "detailNoEpisodes": "لا توجد حلقات متاحة",
+  "detailEpisodesCount": "{count, plural, other{الحلقات ({count})}}",
+  "@detailEpisodesCount": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+  "detailEpisodeMinutes": "{count, plural, other{{count} دقيقة}}",
+  "@detailEpisodeMinutes": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+
+  "badgeLive": "مباشر",
+
+  "playerLive": "مباشر",
+  "playerDemoMode": "وضع العرض: عيّنة عامة — البث الحقيقي يُفعَّل بتمرير HMAC_SECRET",
+  "playerLiveStream": "بثّ مباشر",
+  "playerErrorTitle": "الخادم لا يستجيب لهذا المحتوى",
+  "playerErrorAuthTitle": "تعذّر التحقّق من جلستك",
+  "playerErrorAuthBody": "رفضت البوابة الطلب (جلسة منتهية أو توقيع غير مقبول).\nسجّل الخروج ثم الدخول من جديد.",
+  "playerErrorDemoBody": "تحقّق من الاتصال بالإنترنت (عيّنة العرض).",
+  "playerErrorRealBody": "فشلت 3 محاولات (البوابة تردّ 502 مؤقّتاً).\nجرّب مرّة أخرى بعد قليل أو اختر محتوى آخر.",
+  "playerBack": "رجوع",
+
+  "voiceRoomTitle": "غرفة صوتية",
+  "voicePickAvatar": "اختر صورتك",
+  "voiceEnterCodeHint": "ادخل بكود الغرفة",
+  "voiceJoin": "دخول",
+  "voiceOr": "أو",
+  "voiceNewRoomNameHint": "اسم الغرفة الجديدة",
+  "voiceCreateRoom": "إنشاء غرفة",
+  "voiceWatchingNow": "يشاهدون الآن",
+  "voiceLive": "مباشر",
+  "voiceContentUnavailable": "هذا المحتوى غير متاح لديك",
+  "voiceUnfollow": "إيقاف المتابعة",
+  "voiceFollow": "تابِعه",
+  "voiceAdmin": "أدمن",
+  "voiceMuteMic": "كتم المايك",
+  "voiceUnmuteMic": "فتح المايك",
+  "voiceEndRoom": "إنهاء الغرفة",
+  "voiceLeave": "خروج",
+  "voiceCode": "الكود",
+  "voiceCodeCopied": "نُسخ كود الغرفة",
+  "voiceUnknownInitial": "؟",
+  "voiceYouSuffix": "{name} (أنت)",
+  "@voiceYouSuffix": {
+    "placeholders": { "name": { "type": "String" } }
+  },
+  "voiceKickConfirmTitle": "طرد نهائي",
+  "voiceKickConfirmBody": "سيُطرد «{name}» نهائياً ولن يستطيع العودة لهذه الغرفة.",
+  "@voiceKickConfirmBody": {
+    "placeholders": { "name": { "type": "String" } }
+  },
+  "voiceKick": "طرد",
+  "voiceErrInvalidResponse": "استجابة غير صالحة من الخادم",
+  "voiceErrNetwork": "فشل الاتصال بالخادم",
+  "voiceErrKicked": "أنت مطرود من هذه الغرفة",
+  "voiceErrNotFound": "الغرفة غير موجودة",
+  "voiceErrUnreachable": "تعذّر الوصول للغرفة",
+  "voiceErrJoinFailed": "تعذّر الدخول للغرفة",
+  "voiceErrMicDenied": "إذن المايكروفون مرفوض"
+}
